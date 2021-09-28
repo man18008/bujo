@@ -7,7 +7,7 @@
       </div>
       <div class="row">
         <div class="col-xs-5">
-          <img class="img-responsive" style="max-height: 100px;">
+          <img [src]="contact.imageURL" alt="{{ contact.name }}"  class="img-responsive" style="max-height: 100px;">        
         </div>
         <div class="col-xs-6 pull-right">
           <a type="button" class="btn btn-primary btn-md">Edit</a>
@@ -18,12 +18,12 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-xs-12">
-          <strong>Email: </strong> 
+          <strong>Email: {{ contact.email }} </strong> 
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <strong> Phone: </strong>
+          <strong> Phone: {{ contact.phone }}</strong>
         </div>
       </div>
     </div>
