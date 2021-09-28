@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header.component';
@@ -34,7 +36,8 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
     MessageListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
