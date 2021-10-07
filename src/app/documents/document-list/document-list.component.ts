@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Document } from '../document.model';
-import * as uuid from 'uuid';
+
 
 @Component({
   selector: 'cms-document-list',
@@ -21,6 +21,10 @@ export class DocumentListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelected(document: Document): void {
+    this.selectedDocumentEvent.emit(document);
   }
 
 }
