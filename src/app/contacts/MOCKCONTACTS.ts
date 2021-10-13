@@ -251,7 +251,7 @@ export const MOCKCONTACTS: Contact[] = [
 
   // index 17
   {
-    id: '18', name: 'Computer Security team', email: ' ', phone: ' ', imageURL: ' ', group: [
+    id: '18', name: 'Megan', email: ' ', phone: ' ', imageURL: ' ', group: [
     {
       id: '5',
       name: 'Kory Godfrey',
