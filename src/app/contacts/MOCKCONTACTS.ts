@@ -119,6 +119,14 @@ export const MOCKCONTACTS: Contact[] = [
     imageURL: '../../assets/images/thompsonda.jpg',
     group: null
   },
+  {
+    id: '100',
+    name: 'Megan Schauers',
+    email: 'man18008@byui.edu',
+    phone: '480-208-3354',
+    imageURL: '../../assets/images/meganschauers.jpg',
+    group: null
+  },
 
   // teams
   // index 13
@@ -251,7 +259,7 @@ export const MOCKCONTACTS: Contact[] = [
 
   // index 17
   {
-    id: '18', name: 'Megan', email: ' ', phone: ' ', imageURL: ' ', group: [
+    id: '18', name: 'Computer Security team', email: ' ', phone: ' ', imageURL: ' ', group: [
     {
       id: '5',
       name: 'Kory Godfrey',
