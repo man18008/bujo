@@ -1,7 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { Contact } from './contact.model';
 import { ContactService } from './contact.service';
- 
+import { Component, Inject, OnInit } from '@angular/core';
+import { Contact } from './contact.model';
+
 @Component({
   selector: 'cms-contacts',
   templateUrl: './contacts.component.html',
@@ -9,7 +9,6 @@ import { ContactService } from './contact.service';
 })
 export class ContactsComponent implements OnInit {
   selectedContact: Contact;
-  
   constructor(private contactService: ContactService) { }
 
   ngOnInit(): void {
