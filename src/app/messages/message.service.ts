@@ -28,6 +28,10 @@ export class MessageService {
         });
   }
 
+  getMessages(): Message[] {
+    return this.messages.slice();
+  }
+
   getMaxId(): number {
     let maxId = 0;
     for (const message of this.messages) {
@@ -37,10 +41,6 @@ export class MessageService {
       }
     }
     return maxId;
-  }
-
-  getMessages(): Message[] {
-    return this.messages.slice();
   }
 
   getMessage(id: string): Message {
