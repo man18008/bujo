@@ -35,7 +35,8 @@ export class MessageService {
   getMaxId(): number {
     let maxId = 0;
     for (const message of this.messages) {
-      let currentId = parseInt(message.id);
+      const currentId = parseInt(message.id);
+      // let currentId = parseInt(message.id);
       if (currentId > maxId) {
         maxId = currentId;
       }
