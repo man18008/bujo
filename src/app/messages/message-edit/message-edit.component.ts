@@ -11,13 +11,13 @@ import { MessageService } from '../message.service';
 
 export class MessageEditComponent implements OnInit {
 
+  // @Output() addMessageEvent = new EventEmitter<Message>();
+  @Output() addMessageEvent: EventEmitter<Message> = new EventEmitter<Message>();
+
   currentSender = '100';
 
   @ViewChild('subject', { static: true }) subject: ElementRef;
   @ViewChild('msgText', { static: true }) msgText: ElementRef;
-
-  // @Output() addMessageEvent = new EventEmitter<Message>();
-  @Output() addMessageEvent: EventEmitter<Message> = new EventEmitter<Message>();
 
   constructor(private messageService: MessageService) { }
 
@@ -29,9 +29,9 @@ export class MessageEditComponent implements OnInit {
     const sender = this.currentSender;
     const subject = this.subject.nativeElement.value;
     const msgText = this.msgText.nativeElement.value;
-    const newMessage = new Message(id, subject, msgText, this.currentSender);
-    //this.addMessageEvent.emit(newMessage);
+    const newMessage = new Message(id, subject, msgText, sender);
     this.messageService.addMessage(newMessage);
+    //this.addMessageEvent.emit(newMessage);
   }
 
   onClear() {
