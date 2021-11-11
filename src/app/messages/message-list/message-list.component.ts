@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Message } from '../message.model';
 import { MessageService } from './../message.service';
 import { Subscription } from 'rxjs';
@@ -17,8 +17,8 @@ export class MessageListComponent implements OnInit {
 
   ngOnInit(): void {
     this.messages = this.messageService.getMessages();
-    this.subscription = this.messageService.messageListChangedEvent.subscribe((messagesList: Message[]) => this.messages = messagesList.slice())
     // this.messageService.messageChangedEvent.subscribe((messages) => this.messages = messages.slice());
+    this.subscription = this.messageService.messageListChangedEvent.subscribe((messages: Message[]) => this.messages = messages.slice())
   }
 
   ngOnDestroy(): void {
