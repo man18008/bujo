@@ -14,7 +14,7 @@ export class MessageEditComponent implements OnInit {
   // @Output() addMessageEvent = new EventEmitter<Message>();
   @Output() addMessageEvent: EventEmitter<Message> = new EventEmitter<Message>();
 
-  currentSender = '100';
+  currentSender = '19';
 
   @ViewChild('subject', { static: true }) subject: ElementRef;
   @ViewChild('msgText', { static: true }) msgText: ElementRef;
