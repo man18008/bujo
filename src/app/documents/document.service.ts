@@ -30,7 +30,7 @@ export class DocumentService {
   }
 
   constructor(private http: HttpClient) {
-    this.http.get<Document[]>('https://cmswdd430-default-rtdb.firebaseio.com/documents.json')
+    this.http.get<Document[]>('http://localhost:3000/documents')
       .subscribe((documentsList: Document[]) => {
         this.documents = documentsList;
         this.maxDocumentId = this.getMaxId();
@@ -46,10 +46,21 @@ export class DocumentService {
     if (!newDocument) {
       return;
     }
-    this.maxDocumentId++;
-    newDocument.id = this.maxDocumentId.toString();
-    this.documents.push(newDocument);
-    this.storeDocuments();
+    newDocument.id = '';
+
+    // add new document to documents
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    this.http.post<{ message: string, document: Document }>('http://localhost:3000/documents', newDocument, { headers: headers })
+      .subscribe(
+        (responseData) => {
+          this.documents.push(responseData.document);
+          this.documentListChangedEvent.next(this.documents.slice());
+        }
+      );
+    // this.maxDocumentId++;
+    // newDocument.id = this.maxDocumentId.toString();
+    // this.documents.push(newDocument);
+    // this.storeDocuments();
     // this.documentListChangedEvent.next(this.documents.slice());
   }
 
@@ -62,8 +73,17 @@ export class DocumentService {
       return;
     }
     newDocument.id = originalDocument.id;
-    this.documents[position] = newDocument;
-    this.storeDocuments();
+    // update database
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    this.http.put<any>('http://localhost:3000/documents/' + originalDocument.id, newDocument, { headers: headers })
+      .subscribe(
+        (response: Response) => {
+          this.documents[position] = newDocument;
+          this.documentListChangedEvent.next(this.documents.slice());
+        }
+      );
+    // this.documents[position] = newDocument;
+    // this.storeDocuments();
     // this.documentListChangedEvent.next(this.documents.slice());
   }
 
@@ -89,20 +109,32 @@ export class DocumentService {
       return;
     }
     
-    this.documents.splice(pos, 1);
-    this.storeDocuments();
+    this.http.delete<any>('http://localhost:3000/documents/' + document.id)
+    .subscribe(
+      (response: Response) => {
+        this.documents.splice(pos, 1);
+        this.documentListChangedEvent.next(this.documents.slice());
+      }
+    );
+    // this.documents.splice(pos, 1);
+    // this.storeDocuments();
     // this.documentListChangedEvent.next(this.documents.slice());
     // this.documentChangedEvent.emit(this.documents.slice());
   }
+  // NO LONGER NEEDED. SEE WEEK 11
+  // https://byui.instructure.com/courses/164460/pages/w11-assignment-instructions
+  // storeDocuments() {
+  //   const documentsJson = JSON.stringify(this.documents);
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //     })
+  //   }
 
-  storeDocuments() {
-    const documentsJson = JSON.stringify(this.documents);
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      })
-    }
-    this.http.put<Document[]>('https://cmswdd430-default-rtdb.firebaseio.com/documents.json', documentsJson, httpOptions)
-      .subscribe(() => this.documentListChangedEvent.next(this.documents.slice()));
-  }
+  //   this.http.put<Document[]>('http://localhost:3000/documents', documentsJson, httpOptions)
+  //     .subscribe(() => this.documentListChangedEvent.next(this.documents.slice()));
+  // }
+  //   this.http.put<Document[]>('https://cmswdd430-default-rtdb.firebaseio.com/documents.json', documentsJson, httpOptions)
+  //     .subscribe(() => this.documentListChangedEvent.next(this.documents.slice()));
+  // }
 }
