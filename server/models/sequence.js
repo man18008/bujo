@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 
 const sequenceSchema = mongoose.Schema({
   maxDocumentId: {
-    type: Number,
+    type: String,
     required: true
   },
   maxMessageId: {
-    type: Number,
+    type: String,
     required: true
   },
   maxContactId: {
-    type: Number,
+    type: String,
     required: true
   }
 });

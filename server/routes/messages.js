@@ -19,7 +19,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   const maxMessageId = sequenceGenerator.nextId("messages");
-
+  console.log('maxMessageId', maxMessageId)
   const message = new Message({
     id: maxMessageId,
     subject: req.body.subject,
