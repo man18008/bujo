@@ -6,3 +6,23 @@
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+.zoom {
+  transition: transform .2s; /* Animation */
+  margin-left: 10px;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.panel-footer{
+  font-family:'Courier New', Courier, monospace;
+}
+h2{
+  font-family:'Courier New', Courier, monospace;
+}
+span{
+  font-family:'Courier New', Courier, monospace;
+}

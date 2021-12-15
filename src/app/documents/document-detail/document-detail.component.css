@@ -3,14 +3,38 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   .margin-left-right{
     margin-left:1rem;
     margin-right:1rem;
   }
-  
+
   .pad-left-right{
     margin-left:1rem;
     margin-right:1rem;
   }
-  
+
+  .zoom {
+    transition: transform .2s; /* Animation */
+    font-family:'Courier New', Courier, monospace;
+  }
+
+  .zoom:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    background-color: rgb(224, 170, 255);
+  }
+
+  h4{
+    font-family:'Courier New', Courier, monospace;
+  }
+  h2{
+    font-family:'Courier New', Courier, monospace;
+  }
+  label{
+    font-family:'Courier New', Courier, monospace;
+    margin-left: 54px;
+  }
+  .label-value{
+    font-family:'Courier New', Courier, monospace;
+    margin-left: 64px;
+  }

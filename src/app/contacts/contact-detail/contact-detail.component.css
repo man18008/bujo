@@ -1,0 +1,16 @@
+.zoom {
+  transition: transform .2s; /* Animation */
+  margin-left: 10px;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+h4{
+  font-family:'Courier New', Courier, monospace;
+}
+h2{
+  font-family:'Courier New', Courier, monospace;
+}

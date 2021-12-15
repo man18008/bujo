@@ -1,12 +1,25 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <div class="row pad-left-right">
-      <span class="pull-left title"><h1>Documents</h1></span>
-      <a class="btn btn-success pull-right" routerLink="/documents/new">Add Document</a>
+      <span class="pull-left title"><h1>Calendar</h1></span>
+      <!-- <a class="btn zoom" style="background-color: rgb(224, 170, 255);" routerLink="/documents/new">Add Document</a> -->
     </div>
   </div>
   <div class="panel-body">
-    <div class="center-panel">
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Monday</th>
+            <th scope="col">Tuesday</th>
+            <th scope="col">Wednesday</th>
+            <th scope="col">Thursday</th>
+            <th scope="col">Friday</th>
+            <th scope="col">Saturday</th>
+            <th scope="col">Sunday</th>
+          </tr>
+        </thead>
+      </table>
       <cms-document-item *ngFor="let document of documents" [document]="document"></cms-document-item>
     </div>
   </div>

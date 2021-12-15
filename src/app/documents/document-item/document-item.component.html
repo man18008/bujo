@@ -1,4 +1,12 @@
-<a class="list-group-item clearfix documentDiv" routerLink="/documents/{{document.id}}" routerLinkActive="active">
+<a class="list-group-item documentDiv zoom" routerLink="/documents/{{document.id}}" routerLinkActive="active">
+  <table>
+    <tr>
+      <th>
+        {{document.id}}
+        <div></div>
+        {{document.name}}
+      </th>
+    </tr>
+  </table>
   <!-- Display document name here -->
-  {{document.name}}
 </a>

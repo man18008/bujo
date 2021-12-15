@@ -1,0 +1,84 @@
+.navbar {
+  height: 70px;
+}
+
+.navbar-brand {
+  color: white;
+  font-family:'Courier New', Courier, monospace;
+  text-align: left;
+}
+
+.navbar-brand:hover{
+  color: white;
+}
+
+.zoom {
+  transition: transform .2s; /* Animation */
+  margin-top: 5px;
+}
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.menu a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.menu a span {
+  transition: transform 0.2s ease-out;
+}
+
+.menu a span:first-child {
+  display: inline-block;
+  padding: 10px;
+}
+
+.menu a span:last-child {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+}
+
+.menu i {
+  font-size: 45px;
+}
+
+.menu a:hover span:first-child {
+  transform: translateY(100%);
+}
+
+.menu a:hover span:last-child,
+.menu[data-animation] a:hover span:last-child {
+  transform: none;
+}
+

@@ -1,21 +1,61 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="background-color: rgb(148, 97, 172);">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a href="#" class="navbar-brand">WeLearn CMS</a>
+            <p class="navbar-brand zoom">Bullet Journal</p>
         </div>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.instagram.com/ms_bujo/" target="_blank">
+              <span>
+                <a style="color: rgb(255, 255, 255); margin-left: 60px; ">
+                  <i class="fab fa-instagram fa-3x"></i>
+                </a>
+              </span>
+              <span style="font-family:courier;" >
+                <p>Instagram <a href="https://www.instagram.com/ms_bujo" target="_blank" rel="noopener noreferrer"></a></p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://youtu.be/_5X_TVR1obU" target="_blank" >
+              <span>
+                <a style="color: rgb(255, 255, 255);">
+                  <i class="fab fa-youtube fa-3x"></i>
+                </a>
+              </span>
+              <span style="font-family:courier;">
+                <p>Youtube <a href="https://youtu.be/_5X_TVR1obU" target="_blank" rel="noopener noreferrer"></a></p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/man18008/bujo" target="_blank" >
+              <span>
+                <a style="color: rgb(255, 255, 255);">
+                  <i class="fab fa-github"></i>
+                </a>
+              </span>
+              <span style="font-family:courier;">
+                <p>Github <a href="https://github.com/man18008/bujo" target="_blank" rel="noopener noreferrer"></a></p>
+              </span>
+            </a>
+          </li>
+        </ul>
+
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li routerLinkActive="active">
-                    <a routerLink="/documents">Documents</a>
+                    <a routerLink="/documents"class="zoom" style="font-family:courier; background-color: rgb(251, 231, 252);">Calendar</a>
                   </li>
                   <li routerLinkActive="active">
-                    <a routerLink="/messages">Messages</a>
+                    <a routerLink="/contacts"class="zoom"  style="font-family:courier; background-color: rgb(251, 231, 252);">To-Dos</a>
                   </li>
                   <li routerLinkActive="active">
-                    <a routerLink="/contacts">Contacts</a>
+                    <a routerLink="/messages"class="zoom"  style="font-family:courier; background-color: rgb(251, 231, 252);">Habit Tracker</a>
                   </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
+              </ul>
+        <!-- <ul class="nav navbar-nav navbar-right">
             <li class="dropdown" cmsDropdown>
                 <a href="#"class="dropdown-toggle" role="button">User<span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -25,7 +65,7 @@
                     <li><a href="#">Log Out</a></li>
                 </ul>
             </li>
-        </ul>
+        </ul> -->
         </div>
     </div>
 </nav>
